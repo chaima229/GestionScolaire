@@ -1,0 +1,18 @@
+Les procédures CRUD que nous avons créées sont sécurisées contre les attaques par injection SQL grâce à l'utilisation 
+de paramètres dans les requêtes et à la validation des entrées. En validant des éléments comme l'unicité de l'email, 
+le format de l'email et le rôle de l'utilisateur, nous réduisons les risques de manipulation malveillante des données. 
+De plus, les paramètres d'entrée sont traités comme des variables, empêchant l'exécution de code malicieux. Cependant, 
+il est essentiel que nous ne stockions jamais les mots de passe en texte clair. Il est recommandé que nous utilisions un 
+algorithme de hachage sécurisé, comme bcrypt, pour protéger les mots de passe des utilisateurs.
+
+----Modèle Eloquent------
+Les modèles Eloquent dans Laravel offrent une manière simplifiée et sécurisée d'interagir avec la base de données, 
+en utilisant des requêtes préparées en interne. Lors de la manipulation des données via Eloquent,
+Laravel se charge de protéger contre les attaques par injection SQL en utilisant des requêtes paramétrées, 
+ce qui empêche l'insertion de code malicieux dans les requêtes. Par exemple, dans le modèle Utilisateur.php,
+les entrées des utilisateurs sont automatiquement échappées, ce qui renforce la sécurité. 
+Eloquent permet également de valider facilement les données avant leur insertion,
+et d'éviter de stocker les informations sensibles, comme les mots de passe, en texte clair.
+Il est recommandé d'utiliser un algorithme de hachage sécurisé tel que bcrypt pour les mots de passe des utilisateurs 
+afin de garantir leur sécurité.
+(VOIR Utilisateur.php)

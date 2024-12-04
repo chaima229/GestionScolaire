@@ -1,0 +1,11 @@
+1.1 Sauvegarde Complète :
+Objectif : Sauvegarder l'intégralité de la base de données projet_bdd.
+Fréquence : Une fois par semaine (ou selon les besoins de votre entreprise).
+Méthode :
+Utilisation de mysqldump pour créer une sauvegarde complète de la base de données projet_bdd
+ 
+Script de sauvegarde:
+mysqldump -u root -p projet_bdd > /path/to/backup/projet_bdd_full_backup.sql
+
+Script de restauration:
+mysql -u root -p projet_bdd < /path/to/backup/projet_bdd_full_backup.sql

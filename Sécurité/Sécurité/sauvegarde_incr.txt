@@ -1,0 +1,11 @@
+1.2 Sauvegarde Incrémentielle :
+Objectif : Sauvegarder uniquement les modifications effectuées depuis la dernière sauvegarde complète.
+Fréquence : Quotidienne (ou plus fréquente selon les changements dans les données).
+Méthode :
+Utilisation de mysqlbinlog pour sauvegarder les binlogs, qui contiennent les modifications de la base de données.
+
+script de sauvegarde:
+mysqlbinlog /var/lib/mysql/mysql-bin.000001 > /path/to/backup/projet_bdd_incremental_backup.sql
+
+Script de restauration:
+mysql -u root -p projet_bdd < /path/to/backup/projet_bdd_incremental_backup.sql
